@@ -1,26 +1,169 @@
 @import "tailwindcss";
+@import "@heroui/styles";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-inter: "Inter", sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", monospace;
+  --font-poppins: "Poppins", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-tertiary-container: #f9a65b;
+  --color-primary-fixed-dim: #6cd4f1;
+  --color-surface-dim: #0f1416;
+  --color-on-primary-container: #005060;
+  --color-tertiary-fixed-dim: #ffb77a;
+  --color-on-primary-fixed-variant: #004e5d;
+  --color-on-tertiary-fixed: #2e1500;
+  --color-on-error: #690005;
+  --color-surface-tint: #6cd4f1;
+  --color-surface-container-highest: #313637;
+  --color-error: #ffb4ab;
+  --color-primary: #7be2ff;
+  --color-on-tertiary-fixed-variant: #6d3a00;
+  --color-surface-container-lowest: #0a0f11;
+  --color-on-surface: #dfe3e5;
+  --color-surface: #0f1416;
+  --color-inverse-on-surface: #2c3133;
+  --color-secondary: #bcc7de;
+  --color-on-secondary-fixed: #111c2d;
+  --color-outline-variant: #3e484c;
+  --color-on-primary: #003641;
+  --color-secondary-fixed-dim: #bcc7de;
+  --color-outline: #879397;
+  --color-background: #0f1416;
+  --color-on-secondary-fixed-variant: #3c475a;
+  --color-on-surface-variant: #bdc8cd;
+  --color-secondary-container: #3e495d;
+  --color-on-tertiary: #4c2700;
+  --color-inverse-primary: #00687b;
+  --color-on-primary-fixed: #001f27;
+  --color-tertiary-fixed: #ffdcc2;
+  --color-secondary-fixed: #d8e3fb;
+  --color-tertiary: #ffca9f;
+  --color-on-tertiary-container: #703c00;
+  --color-surface-container: #1b2022;
+  --color-on-secondary: #263143;
+  --color-on-background: #dfe3e5;
+  --color-surface-container-low: #171c1e;
+  --color-surface-variant: #313637;
+  --color-surface-bright: #353a3c;
+  --color-on-error-container: #ffdad6;
+  --color-error-container: #93000a;
+  --color-primary-container: #5cc6e2;
+  --color-primary-fixed: #afecff;
+  --color-on-secondary-container: #aeb9d0;
+  --color-surface-container-high: #262b2c;
+  --color-inverse-surface: #dfe3e5;
+
+  --spacing-gutter: 20px;
+  --spacing-container-margin: 32px;
+
+  --font-body-sm: var(--font-inter);
+  --font-body-lg: var(--font-inter);
+  --font-label-mono: var(--font-jetbrains-mono);
+  --font-poppins: var(--font-poppins);
+  --font-headline-lg-mobile: var(--font-inter);
+  --font-display-lg: var(--font-inter);
+  --font-body-md: var(--font-inter);
+  --font-headline-sm: var(--font-inter);
+  --font-headline-md: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility text-body-sm {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@utility text-body-lg {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@utility text-label-mono {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+@utility text-headline-lg-mobile {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+@utility text-display-lg {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+@utility text-body-md {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@utility text-headline-sm {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+@utility text-headline-md {
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  font-weight: 600;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #080A0D;
+  color: #dfe3e5;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.chart-line {
+  stroke: #5cc6e2;
+  stroke-width: 2;
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chart-area {
+  fill: url(#chartGradient);
+  opacity: 0.2;
+}
+
+.chart-grid {
+  stroke: #3e484c;
+  stroke-width: 1;
+  stroke-dasharray: 4;
+}
+
+.chart-axis {
+  stroke: #3e484c;
+  stroke-width: 1;
+}
+
+.chart-point {
+  fill: #0f1416;
+  stroke: #5cc6e2;
+  stroke-width: 2;
+  r: 4;
+}
+
+/* Interactive Row Hover */
+.table-row-interactive:hover {
+  background-color: #1E293B;
 }
