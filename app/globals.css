@@ -2,7 +2,6 @@
 @import "@heroui/styles";
 
 :root {
-  --font-inter: "Inter", sans-serif;
   --font-jetbrains-mono: "JetBrains Mono", monospace;
   --font-poppins: "Poppins", sans-serif;
 }
@@ -66,8 +65,8 @@
   --font-headline-lg-mobile: var(--font-inter);
   --font-display-lg: var(--font-inter);
   --font-body-md: var(--font-inter);
-  --font-headline-sm: var(--font-inter);
-  --font-headline-md: var(--font-inter);
+  --font-headline-sm: var(--font-poppins);
+  --font-headline-md: var(--font-poppins);
 }
 
 @utility text-body-sm {

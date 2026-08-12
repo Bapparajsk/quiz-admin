@@ -1,5 +1,13 @@
+import Icon from "../icon/icon";
+import { IconName } from "../icon/type";
 
-const navItems = [
+export type NavItem = {
+    label: string;
+    icon: IconName;
+    active?: boolean;
+}
+
+const navItems: NavItem[] = [
     { label: "Dashboard", icon: "dashboard", active: true },
     { label: "Quizzes", icon: "quiz" },
     { label: "Questions", icon: "qr_code_2" },
@@ -31,7 +39,7 @@ export const NavBer = () => {
                                 : "text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface",
                         ].join(" ")}
                     >
-                        <Icon name={item.icon as IconName} />
+                        <Icon name={item.icon} />
                         <span className="font-headline-sm text-headline-sm">{item.label}</span>
                     </a>
                 ))}
