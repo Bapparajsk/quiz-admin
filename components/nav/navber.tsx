@@ -1,24 +1,24 @@
-import Icon from "../icon/icon";
-import { IconName } from "../icon/type";
+"use client";
 
-export type NavItem = {
-    label: string;
-    icon: IconName;
-    active?: boolean;
-}
+import Icon from "../icon/icon";
+import { NavBarItem } from "./navItem";
+import { NavItem } from "./type";
+
+
 
 const navItems: NavItem[] = [
-    { label: "Dashboard", icon: "dashboard", active: true },
-    { label: "Quizzes", icon: "quiz" },
-    { label: "Questions", icon: "qr_code_2" },
-    { label: "Categories", icon: "category" },
-    { label: "Users", icon: "group" },
-    { label: "Leaderboard", icon: "leaderboard" },
-    { label: "Results", icon: "analytics" },
-    { label: "Settings", icon: "settings" },
+    { label: "Dashboard", icon: "dashboard", href: "/" },
+    { label: "Quizzes", icon: "quiz", href: "/quizzes" },
+    { label: "Questions", icon: "qr_code_2", href: "/questions" },
+    { label: "Categories", icon: "category", href: "/categories" },
+    { label: "Users", icon: "group", href: "/users" },
+    { label: "Leaderboard", icon: "leaderboard", href: "/leaderboard" },
+    { label: "Results", icon: "analytics", href: "/results" },
+    { label: "Settings", icon: "settings", href: "/settings" },
 ];
 
 export const NavBer = () => {
+
     return (
         <aside className="fixed left-0 top-0 z-50 flex h-screen w-70 flex-col border-r border-outline-variant bg-surface px-4 py-6">
             <div className="mb-10 px-4">
@@ -28,20 +28,7 @@ export const NavBer = () => {
 
             <nav className="flex flex-1 flex-col gap-2">
                 {navItems.map((item) => (
-                    <a
-                        key={item.label}
-                        aria-current={item.active ? "page" : undefined}
-                        href="#"
-                        className={[
-                            "flex items-center gap-3 rounded-lg px-4 py-3 transition-colors duration-200",
-                            item.active
-                                ? "scale-95 bg-secondary-container text-on-secondary-container"
-                                : "text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface",
-                        ].join(" ")}
-                    >
-                        <Icon name={item.icon} />
-                        <span className="font-headline-sm text-headline-sm">{item.label}</span>
-                    </a>
+                    <NavBarItem key={item.label} {...item} />
                 ))}
             </nav>
 

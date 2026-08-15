@@ -1,4 +1,7 @@
-import { Chip, cn } from "@heroui/react";
+"use client";
+
+import { Button, Chip, cn, Dropdown, Kbd, Label, Separator } from "@heroui/react";
+import { IconEye, IconPencil, IconTrash } from "@tabler/icons-react";
 import { More_horizIcon } from "../icon/more_horiz";
 
 export interface Quiz {
@@ -39,10 +42,45 @@ export const QuizItem = ({ quiz }: { quiz: Quiz }) => {
                 </Chip>
             </td>
             <td className={cn("text-right", itemClassName)}>
-                <button type="button" className="text-on-surface-variant transition-colors hover:text-primary" aria-label={`More actions for ${quiz.name}`}>
-                    <More_horizIcon className="h-4.5 w-4.5" />
-                </button>
+                <div>
+                    <Dropdown>
+                        <Button aria-label="Menu" variant="ghost">
+                            <More_horizIcon />
+                        </Button>
+                        <Dropdown.Popover>
+                            <Dropdown.Menu onAction={(key) => console.log(`Selected: ${key}`)}>
+                                <Dropdown.Item id="new-file" textValue="New file">
+                                    <IconEye stroke={2} size={20} />
+                                    <Label>View Quiz</Label>
+                                    <Kbd className="ms-auto" slot="keyboard" variant="light">
+                                        <Kbd.Abbr keyValue="command" />
+                                        <Kbd.Content>Q</Kbd.Content>
+                                    </Kbd>
+                                </Dropdown.Item>
+                                <Dropdown.Item id="open-file" textValue="Open file">
+                                    <IconPencil stroke={2} size={20} />
+                                    <Label>Edit Quiz</Label>
+                                    <Kbd className="ms-auto" slot="keyboard" variant="light">
+                                        <Kbd.Abbr keyValue="command" />
+                                        <Kbd.Content>E</Kbd.Content>
+                                    </Kbd>
+                                </Dropdown.Item>
+                                <Separator className="bg-separator-secondary" />
+                                <Dropdown.Item id="delete-file" textValue="Delete file" variant="danger">
+                                    <IconTrash stroke={2} size={20} color="red" />
+                                    <Label>Delete file</Label>
+                                    <Kbd className="ms-auto" slot="keyboard" variant="light">
+                                        <Kbd.Abbr keyValue="command" />
+                                        <Kbd.Abbr keyValue="shift" />
+                                        <Kbd.Content>D</Kbd.Content>
+                                    </Kbd>
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown.Popover>
+                    </Dropdown>
+                </div>
             </td>
         </tr>
     );
 }
+
