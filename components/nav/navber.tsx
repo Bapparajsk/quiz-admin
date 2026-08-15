@@ -33,13 +33,13 @@ export const NavBer = () => {
             </nav>
 
             <div className="mt-auto border-t border-outline-variant pt-4">
-                <a
-                    href="#"
+                <button
+                    type="button"
                     className="flex items-center gap-3 rounded-lg px-4 py-3 text-on-surface-variant transition-colors duration-200 hover:bg-surface-container-highest hover:text-on-surface"
                 >
                     <Icon name="logout" />
                     <span className="font-headline-sm text-headline-sm">Logout</span>
-                </a>
+                </button>
             </div>
         </aside>
     )

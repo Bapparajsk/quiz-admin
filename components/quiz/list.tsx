@@ -1,4 +1,5 @@
 import { Card } from "@heroui/react";
+import Link from "next/link";
 import { QuizItem, type Quiz } from "./quizItem";
 
 const recentQuizzes: Quiz[] = [
@@ -21,9 +22,9 @@ export const QuizList = () => {
             <Card className="overflow-hidden border border-[#1E293B] bg-surface shadow-none">
                 <Card.Header className="flex flex-row items-center justify-between border-b border-[#1E293B] p-4">
                     <Card.Title className="font-headline-md text-headline-md text-2xl text-on-surface">Recent Quizzes</Card.Title>
-                    <a className="font-label-mono text-label-mono text-primary-container transition-colors hover:text-primary" href="#">
+                    <Link className="font-label-mono text-label-mono text-primary-container transition-colors hover:text-primary" href="/quizzes">
                         View All
-                    </a>
+                    </Link>
                 </Card.Header>
                 <Card.Content className="p-0">
                     <div className="overflow-x-auto">
