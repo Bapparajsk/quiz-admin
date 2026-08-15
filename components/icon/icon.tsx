@@ -13,6 +13,7 @@ import { Qr_code_2Icon } from "./qr_code_2";
 import { QuizIcon } from "./quiz";
 import { SettingsIcon } from "./settings";
 import { Touch_appIcon } from "./touch_app";
+import { TrayIcon } from "./tray";
 import { Trending_upIcon } from "./trending_up";
 import { IconComponent, IconName, IconProps } from "./type";
 
@@ -32,7 +33,8 @@ const iconMap: Record<IconName, IconComponent> = {
     "qr_code_2": Qr_code_2Icon,
     "settings": SettingsIcon,
     "touch_app": Touch_appIcon,
-    "trending_up": Trending_upIcon
+    "trending_up": Trending_upIcon,
+    "tray": TrayIcon,
 }
 
 

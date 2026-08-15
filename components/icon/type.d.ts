@@ -14,7 +14,9 @@ export type IconName =
     | "quiz"
     | "settings"
     | "touch_app"
-    | "trending_up";
+    | "trending_up"
+    | "tray"
+    ;
 
 export type IconProps = {
     name: IconName;
