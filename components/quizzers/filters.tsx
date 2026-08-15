@@ -2,7 +2,7 @@ import { SearchFilters, SelectFilter } from "../filters";
 
 export const QuizzersFilters = () => {
     return (
-        <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-outline-variant bg-surface p-4">
+        <div className="sticky top-18 z-50 flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-outline-variant bg-surface p-4">
             <div className="w-auto">
                 <SearchFilters />
             </div>

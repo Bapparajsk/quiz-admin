@@ -2,6 +2,10 @@ import { Card } from "@heroui/react";
 import Link from "next/link";
 import { QuizItem, type Quiz } from "./quizItem";
 
+export type QuizListProps = {
+    showHeader?: boolean;
+}
+
 const recentQuizzes: Quiz[] = [
     { name: "Advanced JavaScript", category: "Tech", questions: 20, attempts: 450, difficulty: "Hard", status: "Published", statusClass: "published" },
     { name: "World History 101", category: "General", questions: 15, attempts: 1200, difficulty: "Medium", status: "Published", statusClass: "published" },
@@ -13,19 +17,20 @@ const recentQuizzes: Quiz[] = [
 ];
 
 
-export const QuizList = () => {
+export const QuizList = ({ showHeader = true }: QuizListProps) => {
 
     const headerClasses = "px-6 py-3 font-label-mono text-label-mono font-normal text-on-surface-variant";
 
     return (
         <section className="w-full col-span-12 flex flex-col gap-lg lg:col-span-9">
             <Card className="overflow-hidden border border-[#1E293B] bg-surface shadow-none">
-                <Card.Header className="flex flex-row items-center justify-between border-b border-[#1E293B] p-4">
-                    <Card.Title className="font-headline-md text-headline-md text-2xl text-on-surface">Recent Quizzes</Card.Title>
-                    <Link className="font-label-mono text-label-mono text-primary-container transition-colors hover:text-primary" href="/quizzes">
-                        View All
-                    </Link>
-                </Card.Header>
+                {showHeader && (
+                    <Card.Header className="flex flex-row items-center justify-between border-b border-[#1E293B] p-4">
+                        <Card.Title className="font-headline-md text-headline-md text-2xl text-on-surface">Recent Quizzes</Card.Title>
+                        <Link className="font-label-mono text-label-mono text-primary-container transition-colors hover:text-primary" href="/quizzes">
+                            View All
+                        </Link>
+                    </Card.Header>)}
                 <Card.Content className="p-0">
                     <div className="overflow-x-auto">
                         <table className="w-full border-collapse text-left">
