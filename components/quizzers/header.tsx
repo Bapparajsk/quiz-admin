@@ -1,5 +1,6 @@
 import { Button } from "@heroui/react";
 import { IconPlusFilled } from "@tabler/icons-react";
+import Link from "next/link";
 
 export const QuizzersHeader = () => {
     return (
@@ -9,12 +10,14 @@ export const QuizzersHeader = () => {
                 <p className="font-body-md text-body-md text-on-surface-variant">Create, manage and organize your quizzes.</p>
             </div>
 
-            <Button
-                size="lg"
-            >
-                <IconPlusFilled />
-                Add Quiz
-            </Button>
+            <Link href="/quizzes/new" className="w-full md:w-auto">
+                <Button
+                    size="lg"
+                >
+                    <IconPlusFilled />
+                    Add Quiz
+                </Button>
+            </Link>
         </div>
     );
 };

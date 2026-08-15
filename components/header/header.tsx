@@ -1,7 +1,8 @@
-import { Avatar } from "@heroui/react"
-import { NotificationsIcon } from "../icon/notifications"
+import { Avatar } from "@heroui/react";
+import { memo } from "react";
+import { NotificationsIcon } from "../icon/notifications";
 
-export const Header = () => {
+const Header = () => {
     return (
         <header className="fixed right-0 top-0 z-40 ml-70 flex h-16 w-[calc(100%-280px)] items-center justify-between border-b border-outline-variant bg-surface px-gutter">
             <h2 className="font-headline-sm text-headline-sm font-semibold text-on-surface">Dashboard</h2>
@@ -27,3 +28,8 @@ export const Header = () => {
         </header>
     )
 }
+
+const MemoizedHeader = memo(Header);
+MemoizedHeader.displayName = "Header";
+
+export { MemoizedHeader };
