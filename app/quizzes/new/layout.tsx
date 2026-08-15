@@ -1,3 +1,4 @@
+import QuizStepper from "@/components/quiz/quiz-stepper";
 import { ScreenWrapper } from "@/components/ui/screenWrapper";
 
 export default function NewQuizLayout({ children }: { children: React.ReactNode }) {
@@ -5,7 +6,9 @@ export default function NewQuizLayout({ children }: { children: React.ReactNode 
 
     return (
         <ScreenWrapper>
-            {children}
+            <QuizStepper>
+                {children}
+            </QuizStepper>
         </ScreenWrapper>
     )
 }
