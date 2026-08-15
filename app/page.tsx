@@ -1,7 +1,7 @@
 import { StatsList } from "@/components/home/statsList";
 import Icon from "@/components/icon/icon";
 import { IconName } from "@/components/icon/type";
-import { QuizList } from "@/components/quiz/list";
+import { QuizList } from "@/components/quiz";
 import { ScreenWrapper } from "@/components/ui/screenWrapper";
 import { Button, Card } from "@heroui/react";
 
