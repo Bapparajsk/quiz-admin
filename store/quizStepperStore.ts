@@ -19,18 +19,13 @@ export const useQuizStepperStore = create<QuizStepperStore>(() => ({
     steps: [
         {
             id: 0,
-            title: "Quiz Details",
-            description: "Basic information",
+            title: "Setup",
+            description: "Setup your quiz",
         },
         {
             id: 1,
             title: "Questions",
             description: "Create questions",
-        },
-        {
-            id: 2,
-            title: "Settings",
-            description: "Configure quiz",
         },
         {
             id: 3,

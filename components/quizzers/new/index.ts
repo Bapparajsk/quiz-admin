@@ -1,0 +1,1 @@
+export { NewQuizHeader } from "./header";
