@@ -1,4 +1,4 @@
-import { ListBox, Select } from "@heroui/react";
+import { Label, ListBox, Select } from "@heroui/react";
 
 export type SelectFilterItem = {
     id: string;
@@ -6,20 +6,26 @@ export type SelectFilterItem = {
 }
 
 export type SelectFilterProps = {
+    label?: string;
+    labelClassName?: string;
     triggerClassName?: string;
+    providerClassName?: string;
     placeholder?: string;
     className?: string;
     items: SelectFilterItem[];
 }
 
-export const SelectFilter = ({ triggerClassName, placeholder, className, items }: SelectFilterProps) => {
+export const SelectFilter = ({ label, labelClassName, triggerClassName, placeholder, className, items, providerClassName }: SelectFilterProps) => {
     return (
         <Select className={className} placeholder={placeholder} >
+            <Label className={labelClassName}>
+                {label || placeholder}
+            </Label>
             <Select.Trigger className={triggerClassName}>
                 <Select.Value />
                 <Select.Indicator />
             </Select.Trigger>
-            <Select.Popover>
+            <Select.Popover className={providerClassName}>
                 <ListBox>
                     {items.map((item) => (
                         <ListBox.Item key={item.id} id={item.id}>
