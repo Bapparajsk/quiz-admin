@@ -1,19 +1,18 @@
 "use client";
 
-import { useQuizStepperStore } from "@/store/quizStepperStore";
+import { STEPS, useQuizStepperStore } from "@/store/quizStepperStore";
 import { IconCheck, IconCircle } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 
 export const QuizStepper = () => {
     const currentStep = useQuizStepperStore(state => state.currentStep);
-    const steps = useQuizStepperStore(state => state.steps);
 
-    const progress = steps.length > 1 ? (currentStep / (steps.length - 1)) * 100 - (currentStep * 10) : 0;
+    const progress = STEPS.length > 1 ? (currentStep / (STEPS.length - 1)) * 100 - (currentStep * 8) : 0;
 
     return (
-        <div className="w-full">
+        <div className="w-auto">
             {/* Step Header */}
-            <div className="relative mb-10 max-w-md">
+            <div className="relative mb-10 min-w-xl">
                 {/* Background Line */}
                 <div className="absolute left-8 right-8 top-5 h-px bg-white/10 " />
                 {/* Progress Line */}
@@ -31,7 +30,7 @@ export const QuizStepper = () => {
 
                 {/* Steps */}
                 <div className="relative flex justify-between">
-                    {steps.map((step, index) => {
+                    {STEPS.map((step, index) => {
                         const completed = index < currentStep;
                         const active = index === currentStep;
 
