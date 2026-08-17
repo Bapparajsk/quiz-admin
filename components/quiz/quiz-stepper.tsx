@@ -19,12 +19,11 @@ export const QuizStepper = () => {
                 <motion.div
                     className="absolute left-8 right-8 top-5 h-px bg-cyan-400"
                     initial={false}
-                    animate={{
-                        width: `${progress}%`,
-                    }}
+                    animate={{ width: `${progress}%`, }}
                     transition={{
                         duration: 0.45,
                         ease: "easeInOut",
+                        delay: 0.25
                     }}
                 />
 

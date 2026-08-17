@@ -7,6 +7,8 @@ import { useQuizStepperStore } from "@/store/quizStepperStore";
 export const NewQuizStep = () => {
     const currentStep = useQuizStepperStore((state) => state.currentStep);
 
+
+
     if (currentStep === 1) {
         return <QuestionsContainer />;
     }
