@@ -22,7 +22,7 @@ export const STEPS: Step[] = [
         description: "Create questions",
     },
     {
-        id: 3,
+        id: 2,
         title: "Review",
         description: "Review & publish",
     },
@@ -35,7 +35,7 @@ export const backTo = [
 ]
 
 export const useQuizStepperStore = create<QuizStepperStore>(() => ({
-    currentStep: 2,
+    currentStep: 0,
 }));
 
 // actions 
