@@ -12,7 +12,7 @@ const answerOptions = [
 
 export const QuestionsContainer = () => {
     return (
-        <section className="grid gap-6 xl:grid-cols-[1.35fr_0.85fr]">
+        <section className="grid gap-6 xl:grid-cols-[1.35fr_0.85fr] ">
             <Card className="border border-white/10 bg-[#0e1213] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
                 <Card.Header>
                     <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/10 pb-6">

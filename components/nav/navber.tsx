@@ -5,7 +5,6 @@ import { NavBarItem } from "./navItem";
 import { NavItem } from "./type";
 
 
-
 const navItems: NavItem[] = [
     { label: "Dashboard", icon: "dashboard", href: "/" },
     { label: "Quizzes", icon: "quiz", href: "/quizzes" },
