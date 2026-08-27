@@ -15,13 +15,11 @@ const quickActions = [
 
 
 export default function Home() {
-
   return (
     <ScreenWrapper>
       <StatsList />
       <div className="flex flex-row gap-4">
-
-        <QuizList />
+        <QuizList />npm install --save-dev @clerk/eslint-plugin
         <section className="col-span-12 flex flex-col gap-lg lg:col-span-3">
           <Card className="border border-[#1E293B] bg-surface p-lg shadow-none">
             <Card.Content className="p-0">
