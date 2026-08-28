@@ -12,9 +12,10 @@ const quickActions = [
   { label: "Manage Users", icon: "manage_accounts", variant: "secondary" },
 ];
 
+import { auth } from '@clerk/nextjs/server';
 
-
-export default function Home() {
+export default async function Home() {
+  await auth.protect()
   return (
     <ScreenWrapper>
       <StatsList />

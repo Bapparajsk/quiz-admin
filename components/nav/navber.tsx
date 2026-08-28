@@ -6,14 +6,14 @@ import { NavItem } from "./type";
 
 
 const navItems: NavItem[] = [
-    { label: "Dashboard", icon: "dashboard", href: "/" },
-    { label: "Quizzes", icon: "quiz", href: "/quizzes" },
-    { label: "Questions", icon: "qr_code_2", href: "/questions" },
-    { label: "Categories", icon: "category", href: "/categories" },
-    { label: "Users", icon: "group", href: "/users" },
-    { label: "Leaderboard", icon: "leaderboard", href: "/leaderboard" },
-    { label: "Results", icon: "analytics", href: "/results" },
-    { label: "Settings", icon: "settings", href: "/settings" },
+    { label: "Dashboard", icon: "dashboard", href: "/dashboard" },
+    { label: "Quizzes", icon: "quiz", href: "/dashboard/quizzes" },
+    { label: "Questions", icon: "qr_code_2", href: "/dashboard/questions" },
+    { label: "Categories", icon: "category", href: "/dashboard/categories" },
+    { label: "Users", icon: "group", href: "/dashboard/users" },
+    { label: "Leaderboard", icon: "leaderboard", href: "/dashboard/leaderboard" },
+    { label: "Results", icon: "analytics", href: "/dashboard/results" },
+    { label: "Settings", icon: "settings", href: "/dashboard/settings" },
 ];
 
 export const NavBer = () => {

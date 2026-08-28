@@ -20,7 +20,7 @@ const eslintConfig = defineConfig([
         'error',
         {
           protected: ['src/app/dashboard/**', 'src/actions/dashboard/**'],
-          public: ['src/app/sign-in/**', 'src/app/sign-up/**'],
+          public: ['src/app/auth/sign-in/**', 'src/app/auth/sign-up/**'],
           resources: {
             routeHandlers: true,
             serverFunctions: true,
