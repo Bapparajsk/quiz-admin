@@ -10,7 +10,7 @@ export const QuizzersHeader = () => {
                 <p className="font-body-md text-body-md text-on-surface-variant">Create, manage and organize your quizzes.</p>
             </div>
 
-            <Link href="/quizzes/new" className="w-full md:w-auto">
+            <Link href="quizzes/new" className="w-full md:w-auto">
                 <Button
                     size="lg"
                 >

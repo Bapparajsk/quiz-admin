@@ -1,6 +1,6 @@
 "use client";
 
-import Icon from "../icon/icon";
+import { OrganizationSwitcher } from "@clerk/nextjs";
 import { NavBarItem } from "./navItem";
 import { NavItem } from "./type";
 
@@ -30,16 +30,7 @@ export const NavBer = () => {
                     <NavBarItem key={item.label} {...item} />
                 ))}
             </nav>
-
-            <div className="mt-auto border-t border-outline-variant pt-4">
-                <button
-                    type="button"
-                    className="flex items-center gap-3 rounded-lg px-4 py-3 text-on-surface-variant transition-colors duration-200 hover:bg-surface-container-highest hover:text-on-surface"
-                >
-                    <Icon name="logout" />
-                    <span className="font-headline-sm text-headline-sm">Logout</span>
-                </button>
-            </div>
+            <OrganizationSwitcher />
         </aside>
     )
 }

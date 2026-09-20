@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={cn("dark", poppins.className)}>
       <body className="w-full min-h-full flex flex-col bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
-        <ClerkProvider>
+        <ClerkProvider taskUrls={{ 'choose-organization': '/session-tasks/choose-organization' }}>
           <Show when="signed-in">
             <NavBer />
             <MemoizedHeader />

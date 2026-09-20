@@ -20,7 +20,7 @@ export default async function Home() {
     <ScreenWrapper>
       <StatsList />
       <div className="flex flex-row gap-4">
-        <QuizList />npm install --save-dev @clerk/eslint-plugin
+        <QuizList />
         <section className="col-span-12 flex flex-col gap-lg lg:col-span-3">
           <Card className="border border-[#1E293B] bg-surface p-lg shadow-none">
             <Card.Content className="p-0">
@@ -44,7 +44,6 @@ export default async function Home() {
               </div>
             </Card.Content>
           </Card>
-
           <Card className="grow border border-outline-variant/30 bg-surface-container-lowest p-6 shadow-none">
             <Card.Content className="p-0">
               <h4 className="mb-2 font-label-mono text-label-mono uppercase text-on-surface-variant">System Status</h4>
