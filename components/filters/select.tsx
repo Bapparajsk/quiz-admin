@@ -18,8 +18,8 @@ export type SelectFilterProps = {
 export const SelectFilter = ({ label, labelClassName, triggerClassName, placeholder, className, items, providerClassName }: SelectFilterProps) => {
     return (
         <Select className={className} placeholder={placeholder} >
-            <Label className={labelClassName}>
-                {label || placeholder}
+            <Label className={labelClassName} isRequired>
+                {label || placeholder} 
             </Label>
             <Select.Trigger className={triggerClassName}>
                 <Select.Value />
