@@ -1,5 +1,7 @@
-import SignedOutRedirect from './SignedOutRedirect'
+import { auth } from "@clerk/nextjs/server";
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-    return <SignedOutRedirect>{children}</SignedOutRedirect>
+export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+    await auth.protect();
+
+    return children
 }

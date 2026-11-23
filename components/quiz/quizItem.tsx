@@ -4,39 +4,42 @@ import { Button, Chip, cn, Dropdown, Kbd, Label, Separator } from "@heroui/react
 import { IconEye, IconPencil, IconTrash } from "@tabler/icons-react";
 import { More_horizIcon } from "../icon/more_horiz";
 
+export type QuizStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
+
+export type  Difficulty = "EASY" | "MEDIUM" | "HARD" | "EXPERT";
+
 export interface Quiz {
-    name: string;
-    category: string;
-    questions: number;
+    id: string;
+    title: string;
+    chapter: string;
+    _count: {
+        questions: number
+    };
     attempts: number;
-    difficulty: string;
-    status: string;
-    statusClass: "published" | "draft" | "closed";
+    difficulty: Difficulty;
+    status: QuizStatus;
 }
 
-function formatAttempts(attempts: number) {
-    return attempts.toLocaleString("en-US");
-}
+const itemClassName = "px-6 py-4";
 
 export const QuizItem = ({ quiz }: { quiz: Quiz }) => {
-
-    const itemClassName = "px-6 py-4";
+    const { status, difficulty } = quiz;
 
     return (
-        <tr key={quiz.name} className="transition-colors duration-200 hover:bg-[#1E293B] hover:cursor-pointer">
-            <td className={cn("font-semibold", itemClassName)}>{quiz.name}</td>
-            <td className={cn("text-on-surface-variant", itemClassName)}>{quiz.category}</td>
-            <td className={cn("text-right font-label-mono", itemClassName)}>{quiz.questions}</td>
-            <td className={cn("text-right font-label-mono", itemClassName)}>{formatAttempts(quiz.attempts)}</td>
+        <tr key={quiz.title} className="transition-colors duration-200 hover:bg-[#1E293B] hover:cursor-pointer">
+            <td className={cn("font-semibold", itemClassName)}>{quiz.title}</td>
+            <td className={cn("text-on-surface-variant", itemClassName)}>{quiz.chapter}</td>
+            <td className={cn("text-right font-label-mono", itemClassName)}>{quiz._count.questions}</td>
+            <td className={cn("text-right font-label-mono", itemClassName)}>{quiz.attempts ?? 0}</td>
             <td className={cn(itemClassName)}>
-                <Chip variant={"primary"} color={quiz.difficulty === "Easy" ? "success" : quiz.difficulty === "Medium" ? "warning" : "danger"}>
-                    {quiz.difficulty}
+                <Chip variant={"primary"} color={difficulty === "EASY" ? "success" : difficulty === "MEDIUM" ? "warning" : difficulty === "HARD" ? "danger" : "accent"}>
+                    {difficulty}
                 </Chip>
             </td>
             <td className={cn(itemClassName)}>
                 <Chip
-                    variant={quiz.statusClass === "published" ? "soft" : quiz.statusClass === "draft" ? "secondary" : "tertiary"}
-                    color={quiz.statusClass === "published" ? "accent" : quiz.statusClass === "draft" ? "default" : "danger"}
+                    variant={status === "PUBLISHED" ? "soft" : status === "DRAFT" ? "secondary" : "tertiary"}
+                    color={status === "PUBLISHED" ? "accent" : status === "DRAFT" ? "default" : "danger"}
                 >
                     {quiz.status}
                 </Chip>

@@ -1,5 +1,6 @@
 import { MemoizedHeader } from "@/components/header";
 import { NavBer } from "@/components/nav";
+import { QueryProvider } from "@/components/providers/query-provider";
 import { ClerkProvider, Show } from "@clerk/nextjs";
 import { cn } from "@heroui/styles";
 import type { Metadata } from "next";
@@ -20,13 +21,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={cn("dark", poppins.className)}>
       <body className="w-full min-h-full flex flex-col bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
-        <ClerkProvider taskUrls={{ 'choose-organization': '/session-tasks/choose-organization' }}>
-          <Show when="signed-in">
-            <NavBer />
-            <MemoizedHeader />
-          </Show>
-          {children}
-        </ClerkProvider>
+        <QueryProvider>
+          <ClerkProvider>
+            <Show when="signed-in">
+              <NavBer />
+              <MemoizedHeader />
+            </Show>
+            {children}
+          </ClerkProvider>
+        </QueryProvider>
       </body>
     </html>
   );
